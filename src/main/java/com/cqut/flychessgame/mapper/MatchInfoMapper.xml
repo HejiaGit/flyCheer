@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqut.flychessgame.mapper.MatchInfoMapper">
+  <resultMap id="BaseResultMap" type="com.cqut.flychessgame.domain.database.MatchInfo">
+    <result column="sponsorId" jdbcType="BIGINT" property="sponsorid" />
+    <result column="acceptId" jdbcType="BIGINT" property="acceptid" />
+    <result column="sign" jdbcType="INTEGER" property="sign" />
+    <result column="diceNum" jdbcType="INTEGER" property="dicenum" />
+    <result column="locX" jdbcType="DOUBLE" property="locx" />
+    <result column="locY" jdbcType="DOUBLE" property="locy" />
+    <result column="cellColor" jdbcType="VARCHAR" property="cellcolor" />
+    <result column="planeNum" jdbcType="INTEGER" property="planenum" />
+    <result column="direction" jdbcType="INTEGER" property="direction" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    sponsorId, acceptId, sign, diceNum, locX, locY, cellColor, planeNum, direction
+  </sql>
+  <select id="selectByExample" parameterType="com.cqut.flychessgame.domain.database.MatchInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from match_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.cqut.flychessgame.domain.database.MatchInfoExample">
+    delete from match_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.cqut.flychessgame.domain.database.MatchInfo">
+    insert into match_info (sponsorId, acceptId, sign, 
+      diceNum, locX, locY, 
+      cellColor, planeNum, direction
+      )
+    values (#{sponsorid,jdbcType=BIGINT}, #{acceptid,jdbcType=BIGINT}, #{sign,jdbcType=INTEGER}, 
+      #{dicenum,jdbcType=INTEGER}, #{locx,jdbcType=DOUBLE}, #{locy,jdbcType=DOUBLE}, 
+      #{cellcolor,jdbcType=VARCHAR}, #{planenum,jdbcType=INTEGER}, #{direction,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cqut.flychessgame.domain.database.MatchInfo">
+    insert into match_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="sponsorid != null">
+        sponsorId,
+      </if>
+      <if test="acceptid != null">
+        acceptId,
+      </if>
+      <if test="sign != null">
+        sign,
+      </if>
+      <if test="dicenum != null">
+        diceNum,
+      </if>
+      <if test="locx != null">
+        locX,
+      </if>
+      <if test="locy != null">
+        locY,
+      </if>
+      <if test="cellcolor != null">
+        cellColor,
+      </if>
+      <if test="planenum != null">
+        planeNum,
+      </if>
+      <if test="direction != null">
+        direction,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="sponsorid != null">
+        #{sponsorid,jdbcType=BIGINT},
+      </if>
+      <if test="acceptid != null">
+        #{acceptid,jdbcType=BIGINT},
+      </if>
+      <if test="sign != null">
+        #{sign,jdbcType=INTEGER},
+      </if>
+      <if test="dicenum != null">
+        #{dicenum,jdbcType=INTEGER},
+      </if>
+      <if test="locx != null">
+        #{locx,jdbcType=DOUBLE},
+      </if>
+      <if test="locy != null">
+        #{locy,jdbcType=DOUBLE},
+      </if>
+      <if test="cellcolor != null">
+        #{cellcolor,jdbcType=VARCHAR},
+      </if>
+      <if test="planenum != null">
+        #{planenum,jdbcType=INTEGER},
+      </if>
+      <if test="direction != null">
+        #{direction,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByExampleSelective" parameterType="map">
+    update match_info
+    <set>
+      <if test="record.sponsorid != null">
+        sponsorId = #{record.sponsorid,jdbcType=BIGINT},
+      </if>
+      <if test="record.acceptid != null">
+        acceptId = #{record.acceptid,jdbcType=BIGINT},
+      </if>
+      <if test="record.sign != null">
+        sign = #{record.sign,jdbcType=INTEGER},
+      </if>
+      <if test="record.dicenum != null">
+        diceNum = #{record.dicenum,jdbcType=INTEGER},
+      </if>
+      <if test="record.locx != null">
+        locX = #{record.locx,jdbcType=DOUBLE},
+      </if>
+      <if test="record.locy != null">
+        locY = #{record.locy,jdbcType=DOUBLE},
+      </if>
+      <if test="record.cellcolor != null">
+        cellColor = #{record.cellcolor,jdbcType=VARCHAR},
+      </if>
+      <if test="record.planenum != null">
+        planeNum = #{record.planenum,jdbcType=INTEGER},
+      </if>
+      <if test="record.direction != null">
+        direction = #{record.direction,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update match_info
+    set sponsorId = #{record.sponsorid,jdbcType=BIGINT},
+      acceptId = #{record.acceptid,jdbcType=BIGINT},
+      sign = #{record.sign,jdbcType=INTEGER},
+      diceNum = #{record.dicenum,jdbcType=INTEGER},
+      locX = #{record.locx,jdbcType=DOUBLE},
+      locY = #{record.locy,jdbcType=DOUBLE},
+      cellColor = #{record.cellcolor,jdbcType=VARCHAR},
+      planeNum = #{record.planenum,jdbcType=INTEGER},
+      direction = #{record.direction,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

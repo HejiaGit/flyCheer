@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="380.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cqut.flychessgame.controller.UserInfoStageController">
+    <children>
+        <Label layoutX="113.0" layoutY="22.0" prefHeight="36.0" prefWidth="169.0" text="请修改您的个人信息" textFill="#c61010">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="48.0" layoutY="78.0" prefHeight="30.0" prefWidth="60.0" text="昵称：">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Label>
+        <TextField fx:id="nickName" layoutX="108.0" layoutY="78.0" prefHeight="30.0" prefWidth="179.0" />
+        <Label layoutX="48.0" layoutY="121.0" prefHeight="30.0" prefWidth="60.0" text="性别：">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Label>
+      <RadioButton fx:id="male" layoutX="108.0" layoutY="128.0" mnemonicParsing="false" text="男">
+         <toggleGroup>
+            <ToggleGroup fx:id="sex" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="female" layoutX="174.0" layoutY="128.0" mnemonicParsing="false" text="女" toggleGroup="$sex" />
+      <RadioButton fx:id="other" layoutX="237.0" layoutY="128.0" mnemonicParsing="false" selected="true" text="保密" toggleGroup="$sex" />
+        <Label layoutX="48.0" layoutY="258.0" prefHeight="30.0" prefWidth="60.0" text="备注：">
+            <font>
+                <Font size="17.0" />    
+            </font>
+        </Label>
+        <TextArea fx:id="remark" layoutX="108.0" layoutY="258.0" prefHeight="55.0" prefWidth="179.0" />
+        <Button layoutX="111.0" layoutY="326.0" mnemonicParsing="false" onAction="#confirm" prefHeight="30.0" prefWidth="60.0" text="确定" textFill="#611212">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button layoutX="216.0" layoutY="326.0" mnemonicParsing="false" onAction="#reset" prefHeight="30.0" prefWidth="60.0" text="重置" textFill="#611212">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+      <Label layoutX="48.0" layoutY="164.0" prefHeight="30.0" prefWidth="76.0" text="原密码：">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="47.0" layoutY="211.0" prefHeight="30.0" prefWidth="76.0" text="新密码：">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="oPassword" layoutX="108.0" layoutY="168.0" prefHeight="30.0" prefWidth="179.0" />
+      <TextField fx:id="nPassword" layoutX="108.0" layoutY="211.0" prefHeight="30.0" prefWidth="179.0" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<AnchorPane prefHeight="669.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cqut.flychessgame.controller.PlayStageController">
+   <children>
+      <HBox prefHeight="735.0" prefWidth="780.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="735.0" prefWidth="480.0">
+               <children>
+                  <ImageView fx:id="backg" fitHeight="669.0" fitWidth="480.0">
+                     <image>
+                        <Image url="@../res/image/map/map.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="diceY" fitHeight="70.0" fitWidth="70.0" layoutX="27.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../res/image/dice/dice_6.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="diceG" fitHeight="70.0" fitWidth="70.0" layoutX="399.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../res/image/dice/dice_6.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="diceR" fitHeight="70.0" fitWidth="70.0" layoutX="8.0" layoutY="563.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../res/image/dice/dice_6.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="diceB" fitHeight="70.0" fitWidth="70.0" layoutX="382.0" layoutY="582.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../res/image/dice/dice_6.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="yp2" fitHeight="38.0" fitWidth="38.0" layoutX="23.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../res/image/plane/y1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="yp1" fitHeight="38.0" fitWidth="38.0" layoutX="65.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../res/image/plane/y1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="yp4" fitHeight="38.0" fitWidth="38.0" layoutX="65.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../res/image/plane/y1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="yp3" fitHeight="38.0" fitWidth="38.0" layoutX="23.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../res/image/plane/y1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="gp4" fitHeight="38.0" fitWidth="38.0" layoutX="397.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../res/image/plane/g2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="gp1" fitHeight="38.0" fitWidth="38.0" layoutX="438.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../res/image/plane/g2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="gp2" fitHeight="38.0" fitWidth="38.0" layoutX="438.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../res/image/plane/g2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="gp3" fitHeight="38.0" fitWidth="38.0" layoutX="396.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../res/image/plane/g2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="bp4" fitHeight="38.0" fitWidth="38.0" layoutX="376.0" layoutY="498.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../res/image/plane/b4.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="bp1" fitHeight="38.0" fitWidth="38.0" layoutX="376.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../res/image/plane/b4.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="bp2" fitHeight="38.0" fitWidth="38.0" layoutX="418.0" layoutY="541.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../res/image/plane/b4.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="bp3" fitHeight="38.0" fitWidth="38.0" layoutX="418.0" layoutY="499.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../res/image/plane/b4.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="rp2" fitHeight="38.0" fitWidth="38.0" layoutX="4.0" layoutY="521.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../res/image/plane/r3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="rp1" fitHeight="38.0" fitWidth="38.0" layoutX="3.0" layoutY="479.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../res/image/plane/r3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="rp4" fitHeight="38.0" fitWidth="38.0" layoutX="46.0" layoutY="479.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../res/image/plane/r3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="rp3" fitHeight="38.0" fitWidth="38.0" layoutX="45.0" layoutY="521.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../res/image/plane/r3.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="Ydice" layoutX="97.0" layoutY="19.0" mnemonicParsing="false" onAction="#Ydices" text="Ydice" visible="false" />
+                  <Button fx:id="Adice" layoutX="103.0" layoutY="63.0" mnemonicParsing="false" visible="false" />
+                  <ImageView fx:id="rw" fitHeight="57.0" fitWidth="56.0" layoutX="211.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../res/image/crown/red_crown.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="textInfo" disable="true" fill="#ee6081" layoutX="119.0" layoutY="615.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <VBox prefHeight="735.0" prefWidth="300.0">
+               <children>
+                  <Pane prefHeight="229.0" prefWidth="300.0" style="-fx-border-color: #bb2424;">
+                     <children>
+                        <HBox prefHeight="205.0" prefWidth="300.0">
+                           <children>
+                              <Pane prefHeight="190.0" prefWidth="124.0">
+                                 <children>
+                                    <Button fx:id="onOff" layoutX="23.0" layoutY="164.0" mnemonicParsing="false" onAction="#onSwitch" prefHeight="31.0" prefWidth="75.0" text="退出游戏">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="portrait" layoutX="19.0" layoutY="33.0" mnemonicParsing="false" onAction="#changeInfo" prefHeight="99.0" prefWidth="80.0" style="-fx-background-image: url(/res/image/dice/dice_1.png);" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="197.0" prefWidth="186.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="20.0" prefHeight="24.0" prefWidth="56.0" text="游戏ID：" />
+                                    <Label fx:id="gameId" layoutX="72.0" layoutY="20.0" prefHeight="23.0" prefWidth="95.0" />
+                                    <Label layoutX="14.0" layoutY="60.0" prefHeight="23.0" prefWidth="43.0" text="昵 称：" />
+                                    <Label fx:id="gameNickName" layoutX="72.0" layoutY="60.0" prefHeight="23.0" prefWidth="95.0" />
+                                    <Label layoutX="14.0" layoutY="100.0" prefHeight="23.0" prefWidth="43.0" text="性 别：" />
+                                    <Label fx:id="sex" layoutX="72.0" layoutY="100.0" prefHeight="23.0" prefWidth="95.0" />
+                                    <Label layoutX="14.0" layoutY="136.0" prefHeight="31.0" prefWidth="75.0" text="游戏天数：" />
+                                    <Label fx:id="days" layoutX="72.0" layoutY="140.0" prefHeight="23.0" prefWidth="95.0" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </HBox>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="256.0" prefWidth="300.0" style="-fx-border-color: #bb2424;">
+                     <children>
+                        <VBox layoutX="2.0" layoutY="-1.0" prefHeight="234.0" prefWidth="294.0">
+                           <children>
+                              <Pane prefHeight="55.0" prefWidth="294.0">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="100.0" layoutY="3.0" prefHeight="45.0" prefWidth="95.0" text="对局详情" textFill="#bb2424">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                                <tabs>
+                                  <Tab text="历史战绩">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <Label layoutX="16.0" layoutY="14.0" lineSpacing="2.0" prefHeight="31.0" prefWidth="56.0" text="胜局数：">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="hWin" layoutX="65.0" layoutY="14.0" prefHeight="31.0" prefWidth="43.0" />
+                                                <Label layoutX="150.0" layoutY="14.0" lineSpacing="2.0" prefHeight="31.0" prefWidth="56.0" text="败局数：">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="hFail" layoutX="206.0" layoutY="14.0" prefHeight="31.0" prefWidth="43.0" />
+                                                <Label layoutX="14.0" layoutY="81.0" prefHeight="31.0" prefWidth="267.0" text="=======详细信息=======">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="16.0" layoutY="120.0" lineSpacing="2.0" prefHeight="31.0" prefWidth="70.0" text="人人对战：">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="ppHTotal" layoutX="80.0" layoutY="120.0" prefHeight="31.0" prefWidth="43.0" />
+                                                <Label layoutX="150.0" layoutY="120.0" lineSpacing="2.0" prefHeight="31.0" prefWidth="70.0" text="人机对战：">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="prHTotal" layoutX="228.0" layoutY="120.0" prefHeight="31.0" prefWidth="43.0" />
+                                                <Label layoutX="14.0" layoutY="50.0" lineSpacing="2.0" prefHeight="31.0" prefWidth="95.0" text="上次登录日期：">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="hLoginDate" layoutX="108.0" layoutY="50.0" prefHeight="31.0" prefWidth="89.0" />
+                                             </children></AnchorPane>
+                                    </content>
+                                  </Tab>
+                                  <Tab text="今日战绩">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="14.0" prefHeight="31.0" prefWidth="64.0" text="胜局数：">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="win" layoutX="78.0" layoutY="14.0" prefHeight="31.0" prefWidth="38.0" />
+                                                <Label layoutX="154.0" layoutY="14.0" prefHeight="31.0" prefWidth="64.0" text="败局数：">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="fail" layoutX="209.0" layoutY="14.0" prefHeight="31.0" prefWidth="38.0" />
+                                                <Label layoutX="18.0" layoutY="81.0" prefHeight="31.0" prefWidth="259.0" text="=======今日详情=======">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="11.0" layoutY="118.0" prefHeight="31.0" prefWidth="70.0" text="人人对战：">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="ppTotal" layoutX="81.0" layoutY="118.0" prefHeight="31.0" prefWidth="38.0" />
+                                                <Label layoutX="151.0" layoutY="118.0" prefHeight="31.0" prefWidth="70.0" text="人机对战：">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="prTotal" layoutX="221.0" layoutY="118.0" prefHeight="31.0" prefWidth="38.0" />
+                                                <Label layoutX="14.0" layoutY="45.0" prefHeight="31.0" prefWidth="70.0" text="今日日期：">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="todayDate" layoutX="81.0" layoutY="45.0" prefHeight="31.0" prefWidth="80.0" />
+                                             </children></AnchorPane>
+                                    </content>
+                                  </Tab>
+                                </tabs>
+                              </TabPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="250.0" prefWidth="300.0" style="-fx-border-color: #bb2424;">
+                     <children>
+                        <Button fx:id="gameStart" layoutX="13.0" layoutY="66.0" mnemonicParsing="false" onAction="#gameStarts" prefHeight="31.0" prefWidth="75.0" text="开始游戏" />
+                        <Button fx:id="startRecord" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="13.0" layoutY="14.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" scaleShape="false" snapToPixel="false" style="-fx-background-image: url(/res/image/other/btn_stop.png); -fx-background-insets: 0;" visible="false" />
+                        <Text fx:id="recordResults" disable="true" layoutX="62.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="209.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="endRecord" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="13.0" layoutY="14.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" scaleShape="false" snapToPixel="false" style="-fx-background-image: url(/res/image/other/btn_start.png); -fx-background-insets: 0;" visible="false" />
+                        <ImageView fx:id="warnPic" fitHeight="133.0" fitWidth="134.0" layoutX="-1.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../res/image/remind/a001.png" />
+                           </image>
+                        </ImageView>
+                     </children></Pane>
+               </children></VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

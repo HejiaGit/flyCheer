@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqut.flychessgame.mapper.UserInfoMapper">
+  <resultMap id="BaseResultMap" type="com.cqut.flychessgame.domain.database.UserInfo">
+    <id column="userId" jdbcType="BIGINT" property="userid" />
+    <result column="passWord" jdbcType="VARCHAR" property="password" />
+    <result column="nickName" jdbcType="VARCHAR" property="nickname" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="createDate" jdbcType="DATE" property="createdate" />
+    <result column="loginDate" jdbcType="DATE" property="logindate" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    userId, passWord, nickName, sex, remark, createDate, loginDate
+  </sql>
+  <select id="selectByExample" parameterType="com.cqut.flychessgame.domain.database.UserInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from user_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_info
+    where userId = #{userid,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from user_info
+    where userId = #{userid,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.cqut.flychessgame.domain.database.UserInfoExample">
+    delete from user_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.cqut.flychessgame.domain.database.UserInfo">
+    insert into user_info (userId, passWord, nickName, 
+      sex, remark, createDate, 
+      loginDate)
+    values (#{userid,jdbcType=BIGINT}, #{password,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{createdate,jdbcType=DATE}, 
+      #{logindate,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cqut.flychessgame.domain.database.UserInfo">
+    insert into user_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="password != null">
+        passWord,
+      </if>
+      <if test="nickname != null">
+        nickName,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="createdate != null">
+        createDate,
+      </if>
+      <if test="logindate != null">
+        loginDate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        #{userid,jdbcType=BIGINT},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null">
+        #{createdate,jdbcType=DATE},
+      </if>
+      <if test="logindate != null">
+        #{logindate,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByExampleSelective" parameterType="map">
+    update user_info
+    <set>
+      <if test="record.userid != null">
+        userId = #{record.userid,jdbcType=BIGINT},
+      </if>
+      <if test="record.password != null">
+        passWord = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nickname != null">
+        nickName = #{record.nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sex != null">
+        sex = #{record.sex,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null">
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createdate != null">
+        createDate = #{record.createdate,jdbcType=DATE},
+      </if>
+      <if test="record.logindate != null">
+        loginDate = #{record.logindate,jdbcType=DATE},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update user_info
+    set userId = #{record.userid,jdbcType=BIGINT},
+      passWord = #{record.password,jdbcType=VARCHAR},
+      nickName = #{record.nickname,jdbcType=VARCHAR},
+      sex = #{record.sex,jdbcType=VARCHAR},
+      remark = #{record.remark,jdbcType=VARCHAR},
+      createDate = #{record.createdate,jdbcType=DATE},
+      loginDate = #{record.logindate,jdbcType=DATE}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cqut.flychessgame.domain.database.UserInfo">
+    update user_info
+    <set>
+      <if test="password != null">
+        passWord = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        nickName = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null">
+        createDate = #{createdate,jdbcType=DATE},
+      </if>
+      <if test="logindate != null">
+        loginDate = #{logindate,jdbcType=DATE},
+      </if>
+    </set>
+    where userId = #{userid,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cqut.flychessgame.domain.database.UserInfo">
+    update user_info
+    set passWord = #{password,jdbcType=VARCHAR},
+      nickName = #{nickname,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      createDate = #{createdate,jdbcType=DATE},
+      loginDate = #{logindate,jdbcType=DATE}
+    where userId = #{userid,jdbcType=BIGINT}
+  </update>
+</mapper>
